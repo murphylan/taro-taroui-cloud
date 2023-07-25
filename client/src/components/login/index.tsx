@@ -1,6 +1,7 @@
 import Taro, { useDidShow, useDidHide, useReady, usePullDownRefresh, UserInfo } from '@tarojs/taro'
 import { useState, useEffect } from 'react'
 import { View, Text, Button } from '@tarojs/components'
+import { AtButton } from 'taro-ui'
 
 const Index = () => {
 
@@ -33,7 +34,7 @@ const Index = () => {
 
   return (
     <View className='index'>
-      <Button onClick={getLogin}>获取登录云函数</Button>
+      <AtButton type='primary' onClick={getLogin} size='small'>获取登录云函数</AtButton>
       <Text>context：{JSON.stringify(userInfo)}</Text>
     </View>
   )

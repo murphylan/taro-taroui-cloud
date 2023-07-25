@@ -1,9 +1,8 @@
-import Taro, { useDidShow, useDidHide, useReady, usePullDownRefresh, UserInfo } from '@tarojs/taro'
-import { useState, useEffect } from 'react'
-import { View, Text } from '@tarojs/components'
-import './index.scss'
-import { AtButton } from 'taro-ui'
+import { View } from '@tarojs/components'
+import { useDidHide, useDidShow, usePullDownRefresh, useReady } from '@tarojs/taro'
+import { useEffect } from 'react'
 import Login from '../../components/login/index'
+import './index.scss'
 
 const Index = () => {
 
@@ -24,7 +23,6 @@ const Index = () => {
   return (
     <View className='index'>
       <Login />
-      <AtButton type='primary'>按钮文案</AtButton>
     </View>
   )
 }
