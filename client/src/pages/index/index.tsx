@@ -2,7 +2,7 @@ import Taro, { useDidShow, useDidHide, useReady, usePullDownRefresh, UserInfo } 
 import { useState, useEffect } from 'react'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
-
+import { AtButton } from 'taro-ui'
 import Login from '../../components/login/index'
 
 const Index = () => {
@@ -24,6 +24,7 @@ const Index = () => {
   return (
     <View className='index'>
       <Login />
+      <AtButton type='primary'>按钮文案</AtButton>
     </View>
   )
 }
