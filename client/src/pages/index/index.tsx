@@ -1,31 +1,22 @@
-import { View } from '@tarojs/components'
-import { useDidHide, useDidShow, usePullDownRefresh, useReady } from '@tarojs/taro'
-import { useEffect } from 'react'
-import Login from '../../components/login/index'
-import './index.scss'
+import { Component } from 'react'
+import { View, Text } from '@tarojs/components'
+import Taro from '@tarojs/taro'
 
-const Index = () => {
+import type CustomTabBar from '../../custom-tab-bar'
 
-  // 可以使用所有的 React Hooks
-  useEffect(() => { })
+export default class Index extends Component {
+  pageCtx = Taro.getCurrentInstance().page
 
-  // 对应 onReady
-  useReady(() => { })
+  componentDidShow () {
+    const tabbar = Taro.getTabBar<CustomTabBar>(this.pageCtx)
+    tabbar?.setSelected(0)
+  }
 
-  // 对应 onShow
-  useDidShow(() => { })
-
-  // 对应 onHide
-  useDidHide(() => { })
-
-  usePullDownRefresh(() => { })
-
-  return (
-    <View className='index'>
-      <Login />
-    </View>
-  )
+  render () {
+    return (
+      <View className='index'>
+        <Text>我是首页！</Text>
+      </View>
+    )
+  }
 }
-
-
-export default Index;

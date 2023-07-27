@@ -6,3 +6,12 @@ $color-brand-dark: #049426;
 
 @import "~taro-ui/dist/style/index.scss";
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+page {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'PingHei', 'Helvetica Neue', 'Helvetica', 'Arial', 'Verdana',
+    'sans-serif';
+}
