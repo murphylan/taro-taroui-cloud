@@ -23,6 +23,12 @@ export default class Index extends Component {
         text: '分类'
       },
       {
+        pagePath: '/pages/hot/index',
+        selectedIconPath: Intellect,
+        iconPath: Intellect,
+        text: '热门'
+      },
+      {
         pagePath: '/pages/cart/index',
         selectedIconPath: '../images/tabbar_cart_on.png',
         iconPath: '../images/tabbar_cart.png',
@@ -58,11 +64,7 @@ export default class Index extends Component {
         <CoverView className='tab-bar-wrap'>
           {
             list.map((item, index) => {
-              return <CoverView className='tab-bar-wrap-item'
-                onClick={this.switchTab.bind(this, index, item.pagePath)}
-                data-path={item.pagePath}
-                key={item.text}
-              >
+              return <CoverView key={index} className='tab-bar-wrap-item' onClick={this.switchTab.bind(this, index, item.pagePath)}>
                 <CoverImage className='tab-bar-wrap-item-icon' src={selected === index ? item.selectedIconPath : item.iconPath} />
                 <CoverView className='tab-bar-wrap-item-btn'
                   style={{ color: selected === index ? selectedColor : color }}

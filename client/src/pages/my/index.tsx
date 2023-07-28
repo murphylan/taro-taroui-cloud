@@ -9,7 +9,7 @@ export default function Index () {
 
   useDidShow(() => {
     const tabbar = Taro.getTabBar<CustomTabBar>(page)
-    tabbar?.setSelected(3)
+    tabbar?.setSelected(4)
   })
 
   return (

@@ -8,12 +8,12 @@ const Index = () => {
 
   useDidShow(() => {
     const tabbar = Taro.getTabBar<CustomTabBar>(page)
-    tabbar?.setSelected(3)
+    tabbar?.setSelected(2)
   })
 
   return (
     <View className='index'>
-      <Text>我是购物车！</Text>
+      <Text>热门</Text>
     </View>
   );
 };

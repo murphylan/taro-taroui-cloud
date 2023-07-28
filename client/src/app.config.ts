@@ -2,6 +2,7 @@ export default defineAppConfig({
   pages: [
     'pages/index/index',
     'pages/cate/index',
+    'pages/hot/index',
     'pages/cart/index',
     'pages/my/index'
   ],
@@ -29,6 +30,12 @@ export default defineAppConfig({
         selectedIconPath: 'images/tabbar_cate_on.png',
         iconPath: 'images/tabbar_cate.png',
         text: '分类'
+      },
+      {
+        pagePath: 'pages/hot/index',
+        selectedIconPath: 'images/tabbar_cate_on.png',
+        iconPath: 'images/tabbar_cate.png',
+        text: '热门'
       },
       {
         pagePath: 'pages/cart/index',
