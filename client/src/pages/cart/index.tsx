@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
 import { View, Text } from '@tarojs/components';
-import Taro from '@tarojs/taro';
+import Taro, { useDidShow } from '@tarojs/taro';
+import { useMemo } from 'react';
 import CustomTabBar from '../../custom-tab-bar';
 
 const Index = () => {
-  const pageCtx = Taro.getCurrentInstance().page;
+  const page = useMemo(() => Taro.getCurrentInstance().page, [])
 
-  useEffect(() => {
-    const tabbar = Taro.getTabBar<CustomTabBar>(pageCtx);
-    tabbar?.setSelected(2);
-  }, []);
+  useDidShow(() => {
+    const tabbar = Taro.getTabBar<CustomTabBar>(page)
+    tabbar?.setSelected(2)
+  })
 
   return (
     <View className='index'>

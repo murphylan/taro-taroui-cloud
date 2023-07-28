@@ -1,22 +1,21 @@
-import { Component } from 'react'
+import { useMemo } from 'react'
+import Taro, { useDidShow } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
-import Taro from '@tarojs/taro'
 
 import type CustomTabBar from '../../custom-tab-bar'
 
-export default class Index extends Component {
-  pageCtx = Taro.getCurrentInstance().page
+const Index = () => {
+  const page = useMemo(() => Taro.getCurrentInstance().page, [])
 
-  componentDidShow () {
-    const tabbar = Taro.getTabBar<CustomTabBar>(this.pageCtx)
+  useDidShow(() => {
+    const tabbar = Taro.getTabBar<CustomTabBar>(page)
     tabbar?.setSelected(0)
-  }
+  })
 
-  render () {
-    return (
-      <View className='index'>
-        <Text>我是首页！</Text>
-      </View>
-    )
-  }
+  return (
+    <View className='index'>
+      <Text>我是首页！</Text>
+    </View>
+  )
 }
+export default Index;

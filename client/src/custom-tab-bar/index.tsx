@@ -1,14 +1,14 @@
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
 import { CoverView, CoverImage } from '@tarojs/components'
-
+import Intellect from '../images/hot_selected.png'
 import './index.scss'
 
 export default class Index extends Component {
   state = {
     selected: 0,
-    color: '#000000',
-    selectedColor: '#DC143C',
+    color: '#666',
+    selectedColor: '#ed6c00',
     list: [
       {
         pagePath: '/pages/index/index',
@@ -48,20 +48,31 @@ export default class Index extends Component {
     })
   }
 
+  // 自定义 tabBar的页面
   render() {
+
     const { list, selected, color, selectedColor } = this.state
 
     return (
       <CoverView className='tab-bar'>
-        <CoverView className='tab-bar-border'></CoverView>
-        {list.map((item, index) => {
-          return (
-            <CoverView key={index} className='tab-bar-item' onClick={this.switchTab.bind(this, index, item.pagePath)}>
-              <CoverImage src={selected === index ? item.selectedIconPath : item.iconPath} />
-              <CoverView style={{ color: selected === index ? selectedColor : color }}>{item.text}</CoverView>
-            </CoverView>
-          )
-        })}
+        <CoverView className='tab-bar-wrap'>
+          {
+            list.map((item, index) => {
+              return <CoverView className='tab-bar-wrap-item'
+                onClick={this.switchTab.bind(this, index, item.pagePath)}
+                data-path={item.pagePath}
+                key={item.text}
+              >
+                <CoverImage className='tab-bar-wrap-item-icon' src={selected === index ? item.selectedIconPath : item.iconPath} />
+                <CoverView className='tab-bar-wrap-item-btn'
+                  style={{ color: selected === index ? selectedColor : color }}
+                >{item.text}
+                </CoverView>
+              </CoverView>
+            })
+          }
+        </CoverView>
+        <CoverImage className='intellect-icon' src={Intellect} onClick={() => { }} />
       </CoverView>
     )
   }
