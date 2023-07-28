@@ -24,8 +24,8 @@ export default class Index extends Component {
       },
       {
         pagePath: '/pages/hot/index',
-        selectedIconPath: Intellect,
-        iconPath: Intellect,
+        selectedIconPath: '../images/hot_selected.png',
+        iconPath: '../images/hot_selected.png',
         text: '热门'
       },
       {
@@ -54,27 +54,21 @@ export default class Index extends Component {
     })
   }
 
-  // 自定义 tabBar的页面
   render() {
-
     const { list, selected, color, selectedColor } = this.state
 
     return (
       <CoverView className='tab-bar'>
-        <CoverView className='tab-bar-wrap'>
-          {
-            list.map((item, index) => {
-              return <CoverView key={index} className='tab-bar-wrap-item' onClick={this.switchTab.bind(this, index, item.pagePath)}>
-                <CoverImage className='tab-bar-wrap-item-icon' src={selected === index ? item.selectedIconPath : item.iconPath} />
-                <CoverView className='tab-bar-wrap-item-btn'
-                  style={{ color: selected === index ? selectedColor : color }}
-                >{item.text}
-                </CoverView>
-              </CoverView>
-            })
-          }
-        </CoverView>
-        <CoverImage className='intellect-icon' src={Intellect} onClick={() => { }} />
+        {list.map((item, index) => {
+          return (
+            <CoverView key={index} className='tab-bar-item'
+              style={index === 2 ? { height: '63px' } : {}}
+              onClick={this.switchTab.bind(this, index, item.pagePath)}>
+              <CoverImage src={selected === index ? item.selectedIconPath : item.iconPath} />
+              <CoverView style={{ color: selected === index ? selectedColor : color }}>{item.text}</CoverView>
+            </CoverView>
+          )
+        })}
       </CoverView>
     )
   }

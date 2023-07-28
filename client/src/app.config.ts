@@ -33,8 +33,8 @@ export default defineAppConfig({
       },
       {
         pagePath: 'pages/hot/index',
-        selectedIconPath: 'images/tabbar_cate_on.png',
-        iconPath: 'images/tabbar_cate.png',
+        selectedIconPath: 'images/hot_selected.png',
+        iconPath: 'images/hot.png',
         text: '热门'
       },
       {

@@ -1,44 +1,37 @@
 .tab-bar {
   position: fixed;
-  left: 0;
   bottom: 0;
-  width: 100%;
-  height: 150px;
-  font-size: 32px;
-  background: transparent;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: white;
+  display: flex;
+  padding-bottom: env(safe-area-inset-bottom);
+}
 
-  &-wrap {
-    display: flex;
-    height: 110px;
-    margin-top: 40px;
-    background: #ffffff;
+.tab-bar-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
 
-    &-item {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 8px;
+.tab-bar-item cover-image {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-      &-icon {
-        width: 55px;
-        height: 55px;
-      }
+.tab-bar-item cover-view {
+  font-size: 20px;
+}
 
-      &-btn {
-        font-size: 24px;
-        line-height: 42px;
-        background: #ffffff;
-      }
-    }
-  }
-
-  .intellect-icon {
-    width: 105px;
-    height: 105px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+/* Styles to make the third tab icon protrude */
+.tab-bar-item:nth-child(3) cover-image {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px) scale(1.2);
 }
