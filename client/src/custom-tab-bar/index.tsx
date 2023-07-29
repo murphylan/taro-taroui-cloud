@@ -1,7 +1,6 @@
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
 import { CoverView, CoverImage } from '@tarojs/components'
-import Intellect from '../images/hot_selected.png'
 import './index.scss'
 
 export default class Index extends Component {
@@ -25,7 +24,7 @@ export default class Index extends Component {
       {
         pagePath: '/pages/hot/index',
         selectedIconPath: '../images/hot_selected.png',
-        iconPath: '../images/hot_selected.png',
+        iconPath: '../images/hot.png',
         text: '热门'
       },
       {
