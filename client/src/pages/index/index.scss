@@ -1,0 +1,29 @@
+@import "~taro-ui/dist/style/components/countdown.scss";
+@import "~taro-ui/dist/style/components/timeline.scss";
+@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui/dist/style/components/load-more.scss";
+@import "~taro-ui/dist/style/components/activity-indicator.scss";
+@import "~taro-ui/dist/style/components/button.scss";
+
+.index {
+  background-color: #ffffff;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  width: 100%;
+  margin: 12rpx;
+}
+
+.header-title {
+  position: relative;
+  text-align: center;
+  width: 200px;
+  height: 60px;
+  background: #fff;
+  border-left: 5px solid deeppink;
+  line-height: 60px;
+  margin: 12rpx;
+}
+
+.attimeline {
+  padding: 30rpx;
+}

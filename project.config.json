@@ -16,7 +16,10 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "condition": false
+    "condition": false,
+    "coverView": false,
+    "packNpmRelationList": [],
+    "ignoreUploadUnusedFiles": true
   },
   "compileType": "miniprogram",
   "libVersion": "3.0.0",
