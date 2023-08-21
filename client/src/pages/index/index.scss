@@ -27,3 +27,11 @@
 .attimeline {
   padding: 30rpx;
 }
+
+.at-timeline-item--red {
+  .at-timeline-item__content {
+    color: deeppink;
+    font-weight: 800;
+  }
+
+}
